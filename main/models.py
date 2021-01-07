@@ -13,7 +13,7 @@ class Category(models.Model):
         return self.name
 
 
-class Recipe(models.Model):
+class Country(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     cooking_time = models.PositiveIntegerField()
@@ -26,6 +26,6 @@ class Recipe(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='recipes')
-    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='countries')
+    recipe = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='images')
 
